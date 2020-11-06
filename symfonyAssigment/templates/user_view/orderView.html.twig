@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User View!{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('css/stylesheet.css') }}" type="text/css" rel="stylesheet"  />
+{% endblock %}
+
+{% block body %}
+    <style>
+        h1{
+            margin-left: 18%;
+            font-size: 50px;
+        }
+    </style>
+    <div>
+        <a href="{{path('userView')}}">Home</a>
+    </div>
+    <div class="d-flex justify-content-center">
+    <div class="col-sm-4">
+        <h1>Book Order</h1>
+        {{ form(Form) }}
+    </div>
+    </div>
+
+{% endblock %}

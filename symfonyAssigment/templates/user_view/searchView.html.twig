@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User View!{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet" />
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/ajax.js') }} "></script>
+        {% endblock %}
+
+
+{% block body %}
+{#    <style>#}
+{#        a{#}
+{#            border-radius: 10px;#}
+{#            padding: 5px;#}
+{#            background: black;#}
+{#            color: aqua;#}
+{#            text-decoration:none;#}
+{#        }#}
+{#        body#}
+{#        {#}
+{#            background-color: #6c757d;#}
+{#        }#}
+{#        div{#}
+{#            margin-top: 10px;#}
+{#        }#}
+
+{#    </style>#}
+
+    <div>
+        <a href="{{path('userView')}}">Home</a>
+        <a href="{{path('processedOrders')}}">Processed Orders</a>
+        <a href="{{path('unProcessedOrders')}}">Unprocessed Orders</a>
+        <a href="{{path('updateProfile')}}">Update Profile</a>
+        <a href="{{path('app_logout')}}">Logout</a>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="col-sm-4">
+            {{ form(Form) }}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+                        {% for value in books %}
+
+                                <div class="col-sm-4">
+                                    <img src="{{ asset('images/images/' ~ value.image) }}"/>
+                                    <br/>
+                                    <span>Name:{{ value.name }}</span>
+                                    <br/>
+                                    <span>by:{{ value.author }}</span>
+                                    <br/>
+                                    <a href="{{path('viewBooksDetails',{id: value.id})}}">View Details</a>
+                                    <a href="{{path('orderBook',{id: value.id})}}">Order Books</a>
+
+                                </div>
+
+            <br>
+
+                        {% endfor %}
+        </div>
+
+
+    </div>
+{% endblock %}

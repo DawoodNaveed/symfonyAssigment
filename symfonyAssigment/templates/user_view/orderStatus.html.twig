@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User View!{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('css/stylesheet.css') }}" type="text/css" rel="stylesheet"  />
+{% endblock %}
+
+{% block body %}
+    <style>
+        span{
+            font-size: 20px;
+            color: #1ea471;
+        }
+    </style>
+    <div>
+        <a href="{{path('userView')}}">Home</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for value in order %}
+                <div class="col-sm-4">
+                    <img src="{{ asset('images/images/' ~ value.image) }}"/>
+                    <br/>
+                    <span>Name: </span><b>{{ value.name }}</b>
+                    <br/>
+                    <span>Author: </span><b>{{ value.author }}</b>
+                    <br/>
+                    <span>Published Date: </span><b>{{ value.published_date }}</b>
+                    <br/>
+                </div>
+                <br>
+        {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
