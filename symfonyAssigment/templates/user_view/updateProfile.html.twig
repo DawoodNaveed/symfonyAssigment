@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign Up!{% endblock %}
+
+{% block body %}
+    <div class="col-sm-3 d-flex justify-content-center">
+        {{ form_start(updateProfile) }}
+        <h1>Update Profile</h1>
+        {{ form_widget(updateProfile) }}
+        <button class="btn btn-lg btn-primary" type="submit">
+            Update Profile
+        </button>
+        {{ form_end(updateProfile) }}
+    </div>
+{% endblock %}

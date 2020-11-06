@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}View Book Details!{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('css/stylesheet.css') }}" type="text/css" rel="stylesheet"  />
+{% endblock %}
+
+{% block body %}
+    <style>
+        span{
+            font-size: 20px;
+            color: #3c4caa;
+        }
+    </style>
+    <div class="d-flex justify-content-center">
+
+        <div class="col-sm-4">
+            <div class="p-3 mb-2 bg-success text-white">
+                {% if bookDetails != NULL %}
+                  <h1>Order Received And It will be delivered withIn 3 working days</h1>
+                    <h1>Your book order details are given below:</h1>
+                    <br/>
+                    <span>Name: </span><b>{{ bookDetails.name }}</b>
+                    <br/>
+                    <span>Author: </span><b>{{ bookDetails.author }}</b>
+                    <br/>
+                    <span>ISBN: </span><b>{{ bookDetails.isbn }}</b>
+                    <br/>
+                    <span>Published Date: </span><b>{{ bookDetails.publishedDate }}</b>
+                    <br/>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

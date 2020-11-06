@@ -1,0 +1,16 @@
+a{
+    border-radius: 10px!important;
+    padding: 5px!important;
+    background: black!important;
+    color: aqua!important;
+    text-decoration:none!important;
+}
+
+body
+{
+    background-color: #6c757d!important;
+}
+div
+{
+            margin-top: 10px;
+}

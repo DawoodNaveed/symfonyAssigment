@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User View!{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('css/stylesheet.css') }}" type="text/css" rel="stylesheet"  />
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/ajax.js') }} "></script>
+{#            <script>#}
+{#                function loadBooks()#}
+{#                {#}
+{#                    alert('Helo');#}
+{#                }#}
+{#                setTimeout(function() {#}
+{#                    $('#flash').fadeOut('slow');#}
+{#                }, 4000);#}
+{#            </script>#}
+        {% endblock %}
+
+
+{% block body %}
+{#    <style>#}
+
+{#        /*a{*/#}
+{#        /*    border-radius: 10px;*/#}
+{#        /*    padding: 5px;*/#}
+{#        /*    background: black;*/#}
+{#        /*    color: aqua;*/#}
+{#        /*    text-decoration:none;*/#}
+{#        /*}*/#}
+{#        /*body*/#}
+{#        /*{*/#}
+{#        /*    background-color: #6c757d;*/#}
+{#        /*}*/#}
+{#        div{#}
+{#            margin-top: 10px;#}
+{#        }#}
+
+{#    </style>#}
+
+    <div>
+        <a href="{{path('userView')}}">Home</a>
+        <a href="{{path('processedOrders')}}">Processed Orders</a>
+        <a href="{{path('unProcessedOrders')}}">Unprocessed Orders</a>
+        <a href="{{path('updateProfile')}}">Update Profile</a>
+        <a href="{{path('app_logout')}}">Logout</a>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="col-sm-4">
+            {{ form(Form) }}
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="row" id="showBooks">
+
+
+        </div>
+        <br/>
+        <button id="loadMore" >Load More</button>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+homepage:
+     path:       /
+     controller: App\Controller\LoginController::homePage
+
+checkingUserRole :
+     path: /checkingUserRole
+     controller: App\Controller\LoginController::checkingUserRole
+
+signUp:
+     path: /signUp
+     controller: App\Controller\LoginController::signUp
+
+userView:
+     path: /userView
+     controller: App\Controller\UserViewController::userView
+
+updateProfile:
+     path: /updateProfile
+     controller: App\Controller\UserViewController::updateProfile
+
+app_logout:
+     path: /logout
+     controller: App\Controller\LoginController::logout
+
+viewBooksDetails:
+     path: /viewDetails/{id}
+     controller: App\Controller\UserViewController::viewDetails
+
+orderBook:
+     path: /orderBook/{id}
+     controller: App\Controller\UserViewController::orderBook
+
+processedOrders:
+     path: /processedOrders
+     controller: App\Controller\UserViewController::processedOrders
+
+unProcessedOrders:
+     path: /unProcessedOrders
+     controller: App\Controller\UserViewController::unProcessedOrders
+
+ajaxAction:
+     path: /ajaxAction
+     controller: App\Controller\UserViewController::ajaxAction
+
+
